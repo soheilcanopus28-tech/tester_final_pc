@@ -36,7 +36,7 @@ def save_result(user_id, score):
 # Get user results
 def get_user_results(user_id):
     conn , cursor = connect_to_db()
-    cursor.execute('SELECT score FROM results WHERE user_id == %s',(user_id,))
+    cursor.execute('SELECT score FROM results WHERE user_id = %s',(user_id,))
     scores = cursor.fetchall()
     conn.close()
     return scores
