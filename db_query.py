@@ -26,6 +26,15 @@ def get_all_questions():
     return questions 
 
 
+# clear the results
+
+def clear_results(user_id):
+    conn , cursor = connect_to_db()
+    cursor.execute('DELETE FROM results WHERE user_id = ?',(user_id,))
+    conn.commit()
+    conn.close()
+
+
 # Save user score
 def save_result(user_id, score):
     conn , cursor = connect_to_db()
