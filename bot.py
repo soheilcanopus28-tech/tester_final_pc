@@ -43,7 +43,9 @@ def menu_handler(message):
             bot.send_message(message.chat.id , f'These are your past scores:\n{[s[0] for s in scores]} out of {amount} \nAvrage : {avg:.2f}')
         else:
             bot.send_message(message.chat.id , 'No results found?!')
-           
+    elif message.text == 'Clear Results':
+        db_query.clear_results(user_id)
+        bot.send_message(message.chat.id , '🧹your history cleared successfully.')    
 
 # Add question
 
