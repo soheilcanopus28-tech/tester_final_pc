@@ -121,7 +121,7 @@ def finish_quiz(chat_id,user_id):
     db_query.save_result(user_id , score)
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add('Add Question' , 'Take Quiz' , 'My Results')
+    markup.add('Add Question' , 'Take Quiz' , 'My Results', 'Clear Results')
 
     bot.send_message(chat_id , f'Quiz finished! your score: {score}/{total}',reply_markup=markup)
     del user_answers[user_id]
