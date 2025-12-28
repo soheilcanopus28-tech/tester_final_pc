@@ -22,11 +22,11 @@ user_answers = {}
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add('Add Question' , 'Take Quiz' , 'My Results')
+    markup.add('Add Question' , 'Take Quiz' , 'My Results','Clear Results')
     bot.send_message(message.chat.id , 'Welcome to tester!\nPlease choose an option from the list below.',reply_markup=markup)
 
 # Handle main menu
-@bot.message_handler(func = lambda msg : msg.text in ['Add Question','Take Quiz','My Results'])
+@bot.message_handler(func = lambda msg : msg.text in ['Add Question','Take Quiz','My Results','Clear Results'])
 def menu_handler(message):
     if message.text == 'Add Question':
         bot.send_message(message.chat.id , 'send your questions in the form of : question | option1 | option2 | option3 | option4 | correct option number')
