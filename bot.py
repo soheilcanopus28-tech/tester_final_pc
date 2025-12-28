@@ -113,7 +113,7 @@ def finish_quiz(chat_id,user_id):
     state = user_answers[user_id]
     score = state['score']
     total = len(state['questions'])
-    print(score)
+    bot.send_message(chat_id , score)
     db_query.save_result(user_id , score)
 
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
