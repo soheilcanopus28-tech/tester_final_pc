@@ -30,7 +30,7 @@ def get_all_questions():
 
 def clear_results(user_id):
     conn , cursor = connect_to_db()
-    cursor.execute('DELETE FROM results WHERE user_id = ?',(user_id,))
+    cursor.execute('DELETE FROM results WHERE user_id = %s',(user_id,))
     conn.commit()
     conn.close()
 
