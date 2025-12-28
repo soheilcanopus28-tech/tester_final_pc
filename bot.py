@@ -44,6 +44,8 @@ def menu_handler(message):
         else:
             bot.send_message(message.chat.id , 'No results found?!')
     elif message.text == 'Clear Results':
+        user_id = message.from_user.id
+        user_id = str(user_id)
         db_query.clear_results(user_id)
         bot.send_message(message.chat.id , '🧹your history cleared successfully.')    
 
