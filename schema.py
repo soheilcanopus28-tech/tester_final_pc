@@ -31,7 +31,7 @@ def create_table():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS results (           
             id SERIAL PRIMARY KEY ,
-            user_id INTEGER NOT NULL,
+            user_id TEXT NOT NULL,
             score INTEGER NOT NULL,
             date DATETIME DEFAULT CURRENT_TIMESTAMP     
         )
