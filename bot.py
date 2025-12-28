@@ -35,6 +35,7 @@ def menu_handler(message):
         start_quiz(message)
     elif message.text == 'My Results':
         user_id = message.from_user.id
+        user_id = str(user_id)
         scores = db_query.get_user_results(user_id)
         if scores :
             amount = db_query.qestions_amount()
